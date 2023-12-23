@@ -168,4 +168,11 @@ nextApp.prepare().then(async () => {
     // eslint-disable-next-line no-console
     console.log(`> Ready on http://localhost:${port}`);
   });
+
+  app.get("/", (req, res) => {
+    res.send("API is up and running");
+  });
+  app.get("/ping", (req, res) => {
+    res.send("PONG");
+  });
 });
