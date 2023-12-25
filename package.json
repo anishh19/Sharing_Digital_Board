@@ -2,14 +2,11 @@
   "name": "digiboard",
   "private": true,
   "scripts": {
-    "dev": "nodemon server/index.ts",
-    "dev:client": "ts-node server/index.ts",
     "build:server": "tsc --project tsconfig.server.json",
     "build:next": "next build",
-    "build": "npm-run-all build:*",
-    "start": "NODE_ENV=production node build/index.js",
-    "lint": "next lint"
-  },
+    "build": "npm run build:next && npm run build:server",
+    "start": "NODE_ENV=production node dist/index.js"
+},
   "dependencies": {
     "express": "^4.17.3",
     "framer-motion": "^6.3.3",
